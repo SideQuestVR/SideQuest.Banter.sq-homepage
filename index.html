@@ -71,9 +71,18 @@
             Where do you want to go?
           </h2>
           
-          <input placeholder="Url to go to..."/> <button>
+          <input id="gotToUrlString" placeholder="Url to go to..."/> <button id="goToUrl">
           Go
           </button>
+          <script>
+          document.getElementById("goToUrl").addEventListener("click", ()=>{
+              let url = document.getElementById("gotToUrlString").value;
+              if(!url.startsWith("https://") && !url.startsWith("http://")) {
+                url = 'https://' + url;
+              }
+              window.location.href = url;
+          });
+          </script>
           <p>
             This is a placeholder landing page for the SideQuest game Banter. Feel free to visit a number of useful resources below for creating content in Banter.
             
