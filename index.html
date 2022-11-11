@@ -75,24 +75,27 @@
           Go
           </button>
           <script>
-          document.getElementById("goToUrl").addEventListener("click", ()=>{
+            let go = ()=>{
               let url = document.getElementById("gotToUrlString").value;
               if(!url.startsWith("https://") && !url.startsWith("http://")) {
                 url = 'https://' + url;
               }
               window.location.href = url;
+          };
+          document.getElementById("goToUrl").addEventListener("click", go);
+          document.getElementById("goToUrl").addEventListener("keyup", e => {
+            if(e.)
           });
           </script>
           <p>
             This is a placeholder landing page for the SideQuest game Banter. Feel free to visit a number of useful resources below for creating content in Banter.
             
           </p><br>
-          <p>
-            <a class="btn--remix" href="https://aframe.io/docs/">Aframe.io Documentation</a><br><br><br>
-            <a class="btn--remix" href="https://glitch.com">Glitch.com</a><br><br><br>
-            <a class="btn--remix" href="https://github.com">Github.com</a><br><br><br>
-            <a class="btn--remix" href="https://google.com">Google.com</a><br><br><br>
-          </p>
+            <a class="btn--remix block" href="https://aframe.io/docs/">Aframe.io Documentation</a>
+            <a class="btn--remix block" href="https://glitch.com">Glitch.com</a>
+            <a class="btn--remix block" href="https://github.com">Github.com</a>
+            <a class="btn--remix block" href="https://github.com">Youtube.com</a>
+            <a class="btn--remix block" href="https://google.com">Google.com</a>
           <!-- ADD BUTTON HERE -->
           
           <!-- Once you've added the button from the readme, click it in the page -->
@@ -106,13 +109,13 @@
       <a
         class="btn--remix"
         target="_top"
-        href="https://glitch.com/edit/#!/remix/glitch-hello-website"
+        href="https://glitch.com/~aframe"
       >
         <img
           src="https://cdn.glitch.com/605e2a51-d45f-4d87-a285-9410ad350515%2FLogo_Color.svg?v=1618199565140"
           alt=""
         />
-        Remix on Glitch
+        Remix AFRAME on Glitch
       </a>
     </footer>
   </body>

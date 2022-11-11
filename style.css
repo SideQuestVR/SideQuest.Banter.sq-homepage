@@ -72,6 +72,10 @@ to this section's matching END comment to see page-specific styles.
 .btn--remix:hover {
   background-color: #D0FFF1;
 }
+.block{
+  display: inline-block;
+  margin-bottom: 5px;
+}
 
 /* Navigation grid */
 .footer {
