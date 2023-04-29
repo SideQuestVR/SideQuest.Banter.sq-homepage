@@ -7,6 +7,17 @@
 <meta name="description" content="A-Frame Logo - A-Frame">
 <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
 <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
+   <script>
+      // A simple aframe component to handle the click
+      AFRAME.registerComponent('handle-click', {
+          init: function () {
+              // When you click on an element, run the animation on the parent element
+              this.el.addEventListener('click', () => {
+                 window.banter.setText(this.el.object3D.children[0].id, atob("c2RxLnN0L2dvYXQ="));
+              })
+          }
+      });
+    </script>
 </head>
 <body>
 <a-scene>
@@ -28,6 +39,10 @@ https://sq-community.glitch.me/ https://sq-new-users.glitch.me/ https://sq-commu
   
   <a-link position="2.5 1 -11.3" rotation="0 180 0" href="https://sq-meditationclearance.glitch.me/"></a-link>
 
+   <!-- A box to click to be able to open a page -->
+  <a-box sq-collider sq-interactable handle-click position="-6.5 0.6 -6" rotation="0 -90 0" depth="0.05" width="1.5" height="0.4" src="https://cdn.glitch.global/7bdd46d4-73c4-47a1-b156-10440ceb99fb/Shapes.jpg?v=1681413206602">
+    <a-text id="clickBoxText" value="click me" position="0 0 0.06" align="center"></a-text>
+  </a-box>
   
   <a-link position="5.5 1 -11.3" rotation="0 150 0" href="https://sq-wintersport-resort.glitch.me/"></a-link>
    
@@ -39,7 +54,7 @@ https://sq-community.glitch.me/ https://sq-new-users.glitch.me/ https://sq-commu
     </a-entity>
     <a-entity id="logo" rotation="0 145 0">
       <a-image position="5.71 0.5 10" side="back" rotation="-20 0 0" src="https://cdn.glitch.global/7bdd46d4-73c4-47a1-b156-10440ceb99fb/chrome_qyR38Mazmq.png?v=1670672999040"></a-image>
-
+      
       <a-entity animation="property: object3D.scale.y; from: 0.0001; to: 1; delay: 200; dur: 1000; easing: easeOutCubic" rotation="-20 0 0" position="0 0 10.75" scale="1 0.0001 1" event-set__loaded="visible: true; _delay: 300" visible="false">
         <a-box sq-collider width="12.5" depth="1" height="30" src="https://cdn.glitch.global/7bdd46d4-73c4-47a1-b156-10440ceb99fb/Shapes.jpg?v=1681413206602" position="0 15 0">
           <a-entity animation="property: object3D.scale.y; from: 0.0001; to: 1; delay: 800; dur: 800; easing: easeOutCubic" rotation="-140 0 0" position="0.1 15 0.1" scale="1 0.0001 1">
