@@ -65,7 +65,7 @@
           title="Click the image!"
         /> -->
         <!-- Instructions on using this project -->
-        <div class="instructions">
+        <div>
 <!--           <h2>
             Your avatar has been updated, what now?
           </h2>
@@ -73,15 +73,15 @@
           <input id="gotToUrlString" placeholder="Url to go to..."/> <button id="goToUrl">
           Go
           </button> -->
-          <table>
+          <table cellspacing="10" style="width: 1400px; table-layout: fixed;">
             <tr>
-              <td>bumpJump<div id="bumpJump"></div></td>
-              <td>frosty<div id="frosty"></div></td>
-              <td>kids<div id="kids"></div></td>
-              <td>leapOfFaith<div id="leapOfFaith"></div></td>
-              <td>slideQuest<div id="slideQuest"></div></td>
-              <td>slideWorks<div id="slideWorks"></div></td>
-              <td>speedster<div id="speedster"></div></td>
+              <td style="vertical-align: top"><b>bumpJump</b><div id="bumpJump"></div></td>
+              <td style="vertical-align: top"><b>frosty</b><div id="frosty"></div></td>
+              <td style="vertical-align: top"><b>kids</b><div id="kids"></div></td>
+              <td style="vertical-align: top"><b>leapOfFaith</b><div id="leapOfFaith"></div></td>
+              <td style="vertical-align: top"><b>slideQuest</b><div id="slideQuest"></div></td>
+              <td style="vertical-align: top"><b>slideWorks</b><div id="slideWorks"></div></td>
+              <td style="vertical-align: top"><b>speedster</b><div id="speedster"></div></td>
             </tr>
           </table>
           <script>
@@ -126,13 +126,13 @@
                  slideWorks.innerHTML = '';
                  const speedster = document.getElementById("speedster");
                  speedster.innerHTML = '';
-                 json.bumpJump.forEach(d=>this.createEle(bumpJump, d.name, d.score));
-                 json.frosty.forEach(d=>this.createEle(frosty, d.name, d.score));
-                 json.kids.forEach(d=>this.createEle(kids, d.name, d.score));
+                 json.bumpJump.forEach(d=>this.createEle(bumpJump, d.name, d.score/1000));
+                 json.frosty.forEach(d=>this.createEle(frosty, d.name, d.score/1000));
+                 json.kids.forEach(d=>this.createEle(kids, d.name, d.score/1000));
                  json.leapOfFaith.forEach(d=>this.createEle(leapOfFaith, d.name, d.score));
-                 json.slideQuest.forEach(d=>this.createEle(slideQuest, d.name, d.score));
+                 json.slideQuest.forEach(d=>this.createEle(slideQuest, d.name, d.score/1000));
                  json.slideWorks.forEach(d=>this.createEle(slideWorks, d.name, d.score));
-                 json.speedster.forEach(d=>this.createEle(speedster, d.name, d.score));
+                 json.speedster.forEach(d=>this.createEle(speedster, d.name, d.score/1000));
                }
                 console.log(jsonObj);
              }
