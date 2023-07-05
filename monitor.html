@@ -75,17 +75,13 @@
           </button> -->
           <table>
             <tr>
-              <td>bumpJump</td>
-              <td>frosty</td>
-              <td>kids</td>
-              <td>leapOfFaith</td>
-              <td>slideQuest</td>
-              <td>slideWorks
-: 
-[]
-speedster
-: 
-[]</td>
+              <td>bumpJump<div id="bumpJump"></div></td>
+              <td>frosty<div id="frosty"></div></td>
+              <td>kids<div id="kids"></div></td>
+              <td>leapOfFaith<div id="leapOfFaith"></div></td>
+              <td>slideQuest<div id="slideQuest"></div></td>
+              <td>slideWorks<div id="slideWorks"></div></td>
+              <td>speedster<div id="speedster"></div></td>
             </tr>
           </table>
           <script>
@@ -115,7 +111,35 @@ speedster
                const jsonObj = JSON.parse(data);
                const path = jsonObj.path;
                const json = jsonObj.data;
+               if(path == "tick") {
+                 const bumpJump = document.getElementById("bumpJump");
+                 bumpJump.innerHTML = '';
+                 const frosty = document.getElementById("frosty");
+                 frosty.innerHTML = '';
+                 const kids = document.getElementById("kids");
+                 kids.innerHTML = '';
+                 const leapOfFaith = document.getElementById("leapOfFaith");
+                 leapOfFaith.innerHTML = '';
+                 const slideQuest = document.getElementById("slideQuest");
+                 slideQuest.innerHTML = '';
+                 const slideWorks = document.getElementById("slideWorks");
+                 slideWorks.innerHTML = '';
+                 const speedster = document.getElementById("speedster");
+                 speedster.innerHTML = '';
+                 json.bumpJump.forEach(d=>this.createEle(bumpJump, d.name, d.score));
+                 json.frosty.forEach(d=>this.createEle(frosty, d.name, d.score));
+                 json.kids.forEach(d=>this.createEle(kids, d.name, d.score));
+                 json.leapOfFaith.forEach(d=>this.createEle(leapOfFaith, d.name, d.score));
+                 json.slideQuest.forEach(d=>this.createEle(slideQuest, d.name, d.score));
+                 json.slideWorks.forEach(d=>this.createEle(slideWorks, d.name, d.score));
+                 json.speedster.forEach(d=>this.createEle(speedster, d.name, d.score));
+               }
                 console.log(jsonObj);
+             }
+             createEle(parent, name, time) {
+               const ele = document.createElement('div');
+               ele.innerText = name + ": " + time;
+               parent.appendChild(ele);
              }
            }
             new Monitor();
