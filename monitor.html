@@ -84,11 +84,36 @@
               <td style="vertical-align: top"><b>speedster</b><div id="speedster"></div></td>
             </tr>
           </table>
+          <p>
+            
+          </p><br>
+<!--             <a class="btn--remix block" href="https://sidequestvr.github.io/Banter/">Banter Documentation</a>
+            -->
+          <!-- ADD BUTTON HERE -->
+          
+          <!-- Once you've added the button from the readme, click it in the page -->
+          <!-- Check out the function in script.js to see how it works -->
+        </div>
+      </div>
+    </div>
+    <!-- The footer holds our remix button — you can use it for structure or cut it out ✂ -->
+    <footer class="footer">
+      <div class="links"></div>
+       <a
+        class="btn--remix"
+          id="clearButton"
+        target="_top"
+        href="#"
+      >
+        Clear Leaderboard
+      </a>
+    </footer>
           <script>
            class Monitor{
              constructor() {
                this.setupWebsocket();
                document.getElementById("clearButton").addEventListener('click', () => {
+                 console.log("clear button press");
                  this.ws.send(JSON.stringify({
                     path: 'clear',
                     data: {}
@@ -140,7 +165,7 @@
                  json.slideWorks.forEach(d=>this.createEle(slideWorks, d.name, d.score));
                  json.speedster.forEach(d=>this.createEle(speedster, d.name, d.score/1000));
                }
-                console.log(jsonObj);
+                // console.log(jsonObj);
              }
              createEle(parent, name, time) {
                const ele = document.createElement('div');
@@ -150,29 +175,5 @@
            }
             new Monitor();
           </script>
-          <p>
-            
-          </p><br>
-<!--             <a class="btn--remix block" href="https://sidequestvr.github.io/Banter/">Banter Documentation</a>
-            -->
-          <!-- ADD BUTTON HERE -->
-          
-          <!-- Once you've added the button from the readme, click it in the page -->
-          <!-- Check out the function in script.js to see how it works -->
-        </div>
-      </div>
-    </div>
-    <!-- The footer holds our remix button — you can use it for structure or cut it out ✂ -->
-    <footer class="footer">
-      <div class="links"></div>
-       <a
-        class="btn--remix"
-          id="clearButton"
-        target="_top"
-        href="#"
-      >
-        Clear Leaderboard
-      </a>
-    </footer>
   </body>
 </html>
