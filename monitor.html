@@ -88,6 +88,12 @@
            class Monitor{
              constructor() {
                this.setupWebsocket();
+               document.getElementById("clearButton").addEventListener('click', () => {
+                 this.ws.send(JSON.stringify({
+                    path: 'clear',
+                    data: {}
+                  }));
+               });
              }
              setupWebsocket(){
                 return new Promise(resolve => {
@@ -159,7 +165,15 @@
     <!-- The footer holds our remix button — you can use it for structure or cut it out ✂ -->
     <footer class="footer">
       <div class="links"></div>
-      <a
+       <a
+        class="btn--remix"
+          id="clearButton"
+        target="_top"
+        href="#"
+      >
+        Clear Leaderboard
+      </a>
+<!--       <a
         class="btn--remix"
         target="_top"
         href="https://glitch.com/~aframe"
@@ -169,7 +183,7 @@
           alt=""
         />
         Remix AFRAME on Glitch
-      </a>
+      </a> -->
     </footer>
   </body>
 </html>
