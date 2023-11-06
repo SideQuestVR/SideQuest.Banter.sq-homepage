@@ -8,6 +8,7 @@
 <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
 <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
    <script>
+     const MIN_VERSION = 209;
       // A simple aframe component to handle the click
       AFRAME.registerComponent('handle-click', {
           init: function () {
@@ -17,6 +18,17 @@
               })
           }
       });
+     window.loadDoneCallback = ()=>{
+        if(Number(window.VERSION_CODE) <= MIN_VERSION){
+          const text = document.createElement("a-text");
+          text.setAttribute("value", "Please update banter or you may \nnot be able to hear everyone!");
+          text.setAttribute("align", "center");
+          text.setAttribute("position", "0 -0.21 -7.41");
+          text.setAttribute("scale", "2 2 2");
+          text.setAttribute("rotation", "-45 0 0");
+          document.querySelector("a-scene").appendChild(text);
+        }
+     };
     </script>
 </head>
 <body>
@@ -31,7 +43,7 @@
   
 <!-- https://custom-home-minecraft-bedwars-lobby.glitch.me/   -->
   
-  <a-text value="Please update banter or you may \nnot be able to hear everyone!" align="center" position="0 -0.21 -7.41" scale="2 2 2" rotation="-45 0 0"></a-text>
+<!--   <a-text value="Please update banter or you may \nnot be able to hear everyone!" align="center" position="0 -0.21 -7.41" scale="2 2 2" rotation="-45 0 0"></a-text> -->
    <script src="https://vidya-player.glitch.me/portals.js" shape="line" spiral-tightness="0.2" offsets="5.5,2.5,0,-2.5,-5.5" scale-offsets="1.5, 1.2, 1.8, 1.2, 1.5"
              show-events="true"  spacing="2.7" position="0 1 -11.3" rotation="0 0 0" space-limit="5"></script>
 <!--  <a-link position="0 1 -11.3" rotation="0 0 0" scale="1.8 1.8 1.8" href="https://the-bantrooms42.glitch.me"></a-link> -->
