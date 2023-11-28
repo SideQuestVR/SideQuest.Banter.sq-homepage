@@ -8,16 +8,16 @@
 <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
 <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
    <script>
-     const MIN_VERSION = 209;
+     const MIN_VERSION = 100;
       // A simple aframe component to handle the click
-      AFRAME.registerComponent('handle-click', {
+     AFRAME.registerComponent('handle-click', {
           init: function () {
               // When you click on an element, run the animation on the parent element
               this.el.addEventListener('click', () => {
                  window.banter.setText(this.el.object3D.children[0].id, atob("c2RxLnN0L3dvbmU="));
               })
           }
-      });
+     });
      window.loadDoneCallback = ()=>{
         if(Number(window.VERSION_CODE) <= MIN_VERSION){
           const text = document.createElement("a-text");
